@@ -50,16 +50,7 @@ const LUGGAGE_IMAGES = [
    '../img/webp/selectedproducts/selected-1.webp',
    '../img/webp/selectedproducts/selected-2.webp',
    '../img/webp/selectedproducts/selected-3.webp',
-   '../img/webp/selectedproducts/selected-4.webp',
-   '../img/webp/small/small-1.webp',
-   '../img/webp/small/small-2.webp',
-   '../img/webp/small/small-3.webp',
-   '../img/webp/small/small-4.webp',
-   '../img/webp/small/small-5.webp',
-   '../img/webp/travelsuitcases/suitcase-1.webp',
-   '../img/webp/travelsuitcases/suitcase-2.webp',
-   '../img/webp/travelsuitcases/suitcase-3.webp',
-   '../img/webp/travelsuitcases/suitcase-4.webp'
+   '../img/webp/selectedproducts/selected-4.webp'
 ];
 let view = {
    items: [],
@@ -116,8 +107,8 @@ function renderList(items, page) {
 
    listEl.innerHTML = slice.map((p, i) => {
       const cat = String(p.category || '').trim().toLowerCase();
-      const categoryIndex = (cat === 'carry-ons' && carryOnIndexMap.has(p.id)) 
-         ? carryOnIndexMap.get(p.id) 
+      const categoryIndex = (cat === 'carry-ons' && carryOnIndexMap.has(p.id))
+         ? carryOnIndexMap.get(p.id)
          : undefined;
       return productCardHTML(p, start + i + 1, categoryIndex);
    }).join('');
@@ -238,25 +229,24 @@ function applySearch(base, q) {
 
 function applyFilters(base, filters) {
    let result = [...base];
-   
+
    if (filters.size) {
       const filterSize = String(filters.size).trim().toLowerCase();
       result = result.filter(p => {
          const productSize = Array.isArray(p.size) ? p.size : [p.size];
-         return productSize.some(s => String(s).trim().toLowerCase() === filterSize) 
+         return productSize.some(s => String(s).trim().toLowerCase() === filterSize)
             || String(p.size).trim().toLowerCase() === filterSize;
       });
    }
-   
+
    if (filters.color) {
       const filterColor = String(filters.color).trim().toLowerCase();
       result = result.filter(p => {
-         const productColor = Array.isArray(p.color) ? p.color : [p.color];
-         return productColor.some(c => String(c).trim().toLowerCase() === filterColor) 
-            || String(p.color).trim().toLowerCase() === filterColor;
+         const productColors = normalizeColor(p.color);
+         return productColors.some(c => String(c).trim().toLowerCase() === filterColor);
       });
    }
-   
+
    if (filters.category) {
       const filterCategory = String(filters.category).trim().toLowerCase();
       result = result.filter(p => {
@@ -265,13 +255,13 @@ function applyFilters(base, filters) {
          return productCategory === filterCategory;
       });
    }
-   
+
    if (filters.sales) {
-      result = result.filter(p => 
+      result = result.filter(p =>
          p.salesStatus === true || p.salesStatus === 'true' || String(p.salesStatus) === 'true'
       );
    }
-   
+
    return result;
 }
 
@@ -300,7 +290,7 @@ function recomputeView() {
    let items = applySearch(allProducts, view.q);
    items = applyFilters(items, view.filters);
    items = applySort(items, view.sort);
-   
+
    view.items = items;
    const pages = Math.max(1, Math.ceil(items.length / PER_PAGE));
    if (view.page > pages) view.page = 1;
@@ -310,12 +300,36 @@ function recomputeView() {
 
 function normalizeSize(size) {
    if (size == null) return [];
-   return Array.isArray(size) ? size : [size];
+   if (Array.isArray(size)) {
+      return size.flatMap(s => {
+         if (typeof s === 'string' && s.includes(',')) {
+            return s.split(',').map(part => part.trim()).filter(part => part !== '');
+         }
+         return [s];
+      });
+   }
+   // Handle comma-separated values like "S, M, XL"
+   if (typeof size === 'string' && size.includes(',')) {
+      return size.split(',').map(s => s.trim()).filter(s => s !== '');
+   }
+   return [size];
 }
 
 function normalizeColor(color) {
    if (color == null) return [];
-   return Array.isArray(color) ? color : [color];
+   if (Array.isArray(color)) {
+      return color.flatMap(c => {
+         if (typeof c === 'string' && c.includes(',')) {
+            return c.split(',').map(part => part.trim()).filter(part => part !== '');
+         }
+         return [c];
+      });
+   }
+   // Handle comma-separated values like "red, blue" (if needed)
+   if (typeof color === 'string' && color.includes(',')) {
+      return color.split(',').map(c => c.trim()).filter(c => c !== '');
+   }
+   return [color];
 }
 
 function normalizeCategory(category) {
@@ -326,12 +340,22 @@ function normalizeCategory(category) {
 function initFilters(products) {
    const sizes = products.map(p => normalizeSize(p.size))
       .flat()
-      .filter(v => v != null && v !== '');
-   
+      .filter(v => v != null && v !== '')
+      .filter(v => {
+         // Exclude combined values like "S, M, XL" - they are already split
+         const str = String(v);
+         return !str.includes(',');
+      });
+
    const colors = products.map(p => normalizeColor(p.color))
       .flat()
-      .filter(v => v != null && v !== '');
-   
+      .filter(v => v != null && v !== '')
+      .filter(v => {
+         // Exclude combined values like "red, blue" - they are already split
+         const str = String(v);
+         return !str.includes(',');
+      });
+
    const categories = products.map(p => normalizeCategory(p.category))
       .flat()
       .filter(v => v != null && v !== '')
@@ -339,7 +363,7 @@ function initFilters(products) {
          const catLower = cat.toLowerCase();
          return catLower !== 'luggage sets' && catLower !== 'travel-suitcases';
       });
-   
+
    fillFilterSelect(filterSize, sizes);
    fillFilterSelect(filterColor, colors);
    fillFilterSelect(filterCategory, categories);
@@ -350,7 +374,7 @@ function clearFilters() {
    if (filterColor) filterColor.value = '';
    if (filterCategory) filterCategory.value = '';
    if (filterSales) filterSales.checked = false;
-   
+
    view.filters = {
       size: '',
       color: '',
@@ -478,13 +502,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
          }
          allProducts = data;
-         
+
          productImageMap.clear();
          allProducts.forEach((p, index) => {
-            const imagePath = LUGGAGE_IMAGES[index % LUGGAGE_IMAGES.length];
+            // Use imageUrl from product data if available, otherwise use fallback
+            const imagePath = p.imageUrl || LUGGAGE_IMAGES[index % LUGGAGE_IMAGES.length];
             productImageMap.set(p.id, imagePath);
          });
-         
+
          carryOnIndexMap.clear();
          let globalCarryOnIndex = 0;
          allProducts.forEach((p) => {
@@ -494,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
                globalCarryOnIndex++;
             }
          });
-         
+
          initFilters(allProducts);
          renderBestSets(allProducts);
          recomputeView();

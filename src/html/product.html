@@ -155,11 +155,11 @@
                </section>
             </div>
             <section class="tabs">
-               <nav class="tabs__nav" role="tablist" aria-label="Product information tabs">
+               <div class="tabs__nav" role="tablist" aria-label="Product information tabs">
                   <button class="tabs__btn is-active" data-tab="details" role="tab" aria-label="Product details">DETAILS</button>
                   <button class="tabs__btn" data-tab="reviews" role="tab" aria-label="Product reviews">REVIEWS</button>
                   <button class="tabs__btn" data-tab="shipping" role="tab" aria-label="Shipping policy">SHIPPING POLICY</button>
-               </nav>
+               </div>
                <div class="tabs__panes">
                   <div id="tab-details" class="tabs__pane is-active" role="tabpanel" aria-labelledby="tab-details"></div>
                   <div id="tab-reviews" class="tabs__pane" role="tabpanel" aria-labelledby="tab-reviews">
@@ -202,12 +202,14 @@
                                     <textarea id="revText" placeholder="Your Review*" required></textarea>
                                  </label>
                                  <div class="review-form__row">
-                                    <label class="review-form__field" for="revName">
+                                    <div class="review-form__field">
+                                       <label for="revName">Your Name*</label>
                                        <input id="revName" placeholder="Your Name*" required>
-                                    </label>
-                                    <label class="review-form__field" for="revEmail">
+                                    </div>
+                                    <div class="review-form__field">
+                                       <label for="revEmail">Your Email*</label>
                                        <input id="revEmail" type="email" placeholder="Your Email*" required>
-                                    </label>
+                                    </div>
                                  </div>
                                  <label class="review-form__remember">
                                     <input type="checkbox" id="revRemember">

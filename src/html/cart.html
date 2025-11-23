@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="../../dist/css/main.css">
+   <title>My Cart - Best Shop</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container">
+            <div class="header__top" aria-label="Social links and quick actions">
+               <ul class="social-list" aria-label="Follow us">
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://facebook.com" aria-label="Facebook">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#facebook"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://twitter.com" aria-label="Twitter / X">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#twitter"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://instagram.com" aria-label="Instagram">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#instagram"></use>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+               <div class="header__best-shop">
+                  <div class="header__icbg">
+                     <img class="header__icon" src="../img/svg/bs-icon.svg" alt="Best Shop logo">
+                  </div>
+                  <a class="header__logo" href="../index.html" aria-label="BEST SHOP — homepage">BEST SHOP</a>
+               </div>
+               <div class="header-actions">
+                  <a id="openAccount" class="header-actions__link" href="/account" aria-label="Account">
+                     <svg class="header-actions__iconu">
+                        <use xlink:href="../img/svg/sprite.svg#user"></use>
+                     </svg>
+                  </a>
+                  <a class="header-actions__link" href="cart.html" aria-label="Cart">
+                     <svg class="header-actions__iconc">
+                        <use xlink:href="../img/svg/sprite.svg#shopping-cart"></use>
+                     </svg>
+                     <span id="cartCounter" class="cart-counter">1</span>
+                  </a>
+               </div>
+               <div class="header__button">
+                  <button class="header__menu-icon icon-menu" type="button" aria-label="open menu"><span></span></button>
+               </div>
+            </div>
+            <nav class="header__nav" aria-label="Main navigation">
+               <ul class="header__list">
+                  <li class="header__item">
+                     <a href="../index.html" class="header__link">
+                        Home
+                     </a>
+                  </li>
+                  <li class="header__item header__item--catalog">
+                     <a href="catalog.html" class="header__link">
+                        Catalog
+                     </a>
+                     <img src="../img/svg/arrow-down.svg" alt="" aria-hidden="true">
+                  </li>
+                  <li class="header__item">
+                     <a href="about.html" class="header__link">
+                        About Us
+                     </a>
+                  </li>
+                  <li class="header__item">
+                     <a href="contact.html" class="header__link">
+                        Contact Us
+                     </a>
+                  </li>
+               </ul>
+               <div class="header__actions">
+                  <a id="openAccount" class="header-actions__link" href="/account" aria-label="Account">
+                     <svg class="header-actions__iconu">
+                        <use xlink:href="../img/svg/sprite.svg#user"></use>
+                     </svg>
+                  </a>
+                  <a class="header-actions__link" href="cart.html" aria-label="Cart">
+                     <svg class="header-actions__iconc">
+                        <use xlink:href="../img/svg/sprite.svg#shopping-cart"></use>
+                     </svg>
+                     <span id="cartCounter" class="cart-counter">1</span>
+                  </a>
+               </div>
+            </nav>
+         </div>
+      </header>
+
+      <main class="main">
+         <section class="cart-hero">
+            <div class="cart-hero__bg">
+               <img src="../img/webp/my-cart-bg.webp" alt="My Cart background">
+            </div>
+            <div class="cart-hero__overlay"></div>
+            <div class="cart-hero__container">
+               <div class="cart-hero__content">
+                  <h1 class="cart-hero__title">My Cart</h1>
+               </div>
+            </div>
+         </section>
+
+         <section class="cart-content">
+            <div class="cart-content__container">
+               <div class="cart-table">
+                  <table class="cart-table__table">
+                     <thead class="cart-table__head">
+                        <tr>
+                           <th class="cart-table__header">IMAGE</th>
+                           <th class="cart-table__header">PRODUCT NAME</th>
+                           <th class="cart-table__header">PRICE</th>
+                           <th class="cart-table__header">QUANTITY</th>
+                           <th class="cart-table__header">TOTAL</th>
+                           <th class="cart-table__header">DELETE</th>
+                        </tr>
+                     </thead>
+                     <tbody class="cart-table__body" id="cartItems">
+                     </tbody>
+                  </table>
+               </div>
+
+               <div class="cart-actions">
+                  <div class="cart-actions__left">
+                     <a href="catalog.html" class="btn btn--primary cart-actions__btn">CONTINUE SHOPPING</a>
+                     <button class="btn btn--primary cart-actions__btn" type="button" id="clearCart">CLEAR SHOPPING CART</button>
+                  </div>
+                  <div class="cart-summary">
+                     <div class="cart-summary__content">
+                        <div class="cart-summary__row">
+                           <span class="cart-summary__label">Sub Total</span>
+                           <span class="cart-summary__value" id="subTotal">$0</span>
+                        </div>
+                        <div class="cart-summary__row" id="discountRow" style="display: none;">
+                           <span class="cart-summary__label">Discount (10%)</span>
+                           <span class="cart-summary__value" id="discount">$0</span>
+                        </div>
+                        <div class="cart-summary__row">
+                           <span class="cart-summary__label">Shipping</span>
+                           <span class="cart-summary__value" id="shipping">$30</span>
+                        </div>
+                        <div class="cart-summary__row cart-summary__row--total">
+                           <span class="cart-summary__label">Total</span>
+                           <span class="cart-summary__value" id="cartTotal">$30</span>
+                        </div>
+                        <button class="btn btn--primary cart-summary__checkout" type="button">CHECKOUT</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="benefits" aria-labelledby="benefits-title">
+            <div class="benefits__container">
+               <h2 id="benefits-title" class="benefits__title">Our Benefits</h2>
+               <ul class="benefits__list">
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/plane.svg" alt="Plane icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Velit nisl sodales eget donec quis.<br>volutpat orci.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/truck.svg" alt="Truck icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Dolor eu varius. Morbi<br>fermentum velit nisl.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/coins.svg" alt="Coins icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Malesuada fames ac ante<br>ipsum primis in faucibus.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/gradcap.svg" alt="Graduation cap icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Nisl sodales eget donec quis.<br>volutpat orci.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </section>
+      </main>
+
+      <footer class="footer">
+         <div class="footer__container">
+            <div class="footer__columns">
+               <div class="footer__column">
+                  <h3 class="footer__heading"><a href="about.html" class="footer__heading-link">About Us</a></h3>
+                  <ul class="footer__list">
+                     <li>Organisation</li>
+                     <li>Partners</li>
+                     <li>Clients</li>
+                  </ul>
+                  <h3 class="footer__heading">Shipping Information</h3>
+                  <p class="footer__text">
+                     Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
+                     Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum,
+                     lectus in convallis pulvinar, enim elit porta sapien...
+                  </p>
+               </div>
+               <div class="footer__column">
+                  <h3 class="footer__heading">Interesting Links</h3>
+                  <ul class="footer__list">
+                     <li><a href="#">Photo Gallery</a></li>
+                     <li><a href="#">Our Team</a></li>
+                     <li><a href="#">Socials</a></li>
+                  </ul>
+                  <h3 class="footer__heading">Achievements</h3>
+                  <ul class="footer__list">
+                     <li><a href="#">Winning Awards</a></li>
+                     <li><a href="#">Press</a></li>
+                     <li><a href="#">Our Amazing Clients</a></li>
+                  </ul>
+               </div>
+               <div class="footer__column">
+                  <h3 class="footer__heading"><a href="contact.html" class="footer__heading-link">Contact Us</a></h3>
+                  <address class="footer__contact">
+                     <p>
+                        Bendum dolor eu varius. Morbi fermentum velit sodales egestas,
+                        volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac velit.
+                     </p>
+                     <div class="footer__contact-row">
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/phone.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>Phone: <a href="tel:+632366322">(+63) 236 6322</a></span>
+                        </p>
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/email.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <a href="mailto:public@news.com">public@news.com</a>
+                        </p>
+                     </div>
+                     <div class="footer__contact-row">
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/clock.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>Mon – Fri: 10am – 6pm<br>Sat – Sun: 10am – 6pm</span>
+                        </p>
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/location.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>639 Jade Valley,<br>Washington Dc</span>
+                        </p>
+                     </div>
+                  </address>
+               </div>
+            </div>
+            <p class="footer__copy">© Copyright 2025</p>
+         </div>
+      </footer>
+   </div>
+   <div class="account-modal" role="dialog" aria-modal="true" style="display:none">
+      <div class="account-modal__box">
+         <button id="closeModal" class="account-modal__close" aria-label="Close">×</button>
+         <form id="loginForm" class="account-modal__form" novalidate>
+            <label class="account-modal__field">
+               <span>Email address *</span>
+               <input id="loginEmail" type="email" required>
+            </label>
+            <label class="account-modal__field account-modal__field--pwd">
+               <span>Password *</span>
+               <input id="loginPassword" type="password" required>
+               <button id="togglePwd" type="button" class="account-modal__pwd-toggle" aria-label="Show/Hide">👁</button>
+            </label>
+            <div class="account-modal__bottom">
+               <label class="account-modal__remember">
+                  <input type="checkbox" id="loginRemember">
+                  <span>Remember me</span>
+               </label>
+               <a href="#" class="account-modal__forgot">Forgot Your Password?</a>
+            </div>
+            <button type="submit" class="btn btn--primary account-modal__submit">LOG IN</button>
+            <p id="loginMsg" class="account-modal__msg"></p>
+         </form>
+      </div>
+   </div>
+   <script src="../js/main.js"></script>
+   <script src="../js/cart.js"></script>
+</body>
+
+</html>

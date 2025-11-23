@@ -1,0 +1,42 @@
+.footer {
+   @media (max-width: 767px) {
+      padding: toRem(40) 0 toRem(20) 0;
+
+      &__container {
+         row-gap: toRem(30);
+      }
+
+      &__column {
+         gap: toRem(20);
+
+         &:nth-child(3) {
+            .footer__contact>p:first-child {
+               margin-bottom: toRem(30);
+            }
+         }
+      }
+
+      &__heading {
+         font-size: toRem(14);
+         margin-bottom: toRem(12);
+      }
+
+      &__text {
+         font-size: toRem(14);
+         line-height: toRem(20);
+      }
+   }
+
+   @media (min-width: 768px) and (max-width: 1023px) {
+      padding: toRem(50) 0 toRem(25) 0;
+
+      &__container {
+         row-gap: toRem(35);
+      }
+
+      &__column {
+         gap: toRem(20);
+      }
+   }
+}
+

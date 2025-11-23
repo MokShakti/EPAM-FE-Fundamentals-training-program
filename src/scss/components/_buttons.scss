@@ -1,0 +1,34 @@
+.btn {
+   display: inline-block;
+   padding: toRem(12) toRem(16);
+   border: toRem(1) solid transparent;
+   font-size: toRem(16);
+   font-weight: 600;
+   line-height: 1.2;
+   text-align: center;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   text-decoration: none;
+
+   &:hover {
+      filter: brightness(1.05);
+   }
+
+   &:active {
+      transform: translateY(toRem(1));
+   }
+
+   &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 toRem(3) rgba(185, 39, 112, 0.15);
+   }
+}
+
+.btn--primary {
+   background-color: var(--maincolor);
+   color: var(--bg-color);
+
+   &:hover {
+      opacity: 0.9;
+   }
+}

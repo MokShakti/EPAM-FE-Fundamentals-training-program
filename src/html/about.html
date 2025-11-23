@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="../../dist/css/main.css">
+   <title>About Us - Best Shop</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container">
+            <div class="header__top" aria-label="Social links and quick actions">
+               <ul class="social-list" aria-label="Follow us">
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://facebook.com" aria-label="Facebook">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#facebook"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://twitter.com" aria-label="Twitter / X">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#twitter"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="social-list__item">
+                     <a class="social-list__link" href="https://instagram.com" aria-label="Instagram">
+                        <svg class="icon">
+                           <use xlink:href="../img/svg/sprite.svg#instagram"></use>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+               <div class="header__best-shop">
+                  <div class="header__icbg">
+                     <img class="header__icon" src="../img/svg/bs-icon.svg" alt="Best Shop logo">
+                  </div>
+                  <a class="header__logo" href="../index.html" aria-label="BEST SHOP — homepage">BEST SHOP</a>
+               </div>
+               <div class="header-actions">
+                  <a id="openAccount" class="header-actions__link" href="/account" aria-label="Account">
+                     <svg class="header-actions__iconu">
+                        <use xlink:href="../img/svg/sprite.svg#user"></use>
+                     </svg>
+                  </a>
+                  <a class="header-actions__link" href="/cart" aria-label="Cart">
+                     <svg class="header-actions__iconc">
+                        <use xlink:href="../img/svg/sprite.svg#shopping-cart"></use>
+                     </svg>
+                     <span id="cartCounter" class="cart-counter">0</span>
+                  </a>
+               </div>
+               <div class="header__button">
+                  <button class="header__menu-icon icon-menu" type="button" aria-label="open menu"><span></span></button>
+               </div>
+            </div>
+            <nav class="header__nav" aria-label="Main navigation">
+               <ul class="header__list">
+                  <li class="header__item">
+                     <a href="../index.html" class="header__link">
+                        Home
+                     </a>
+                  </li>
+                  <li class="header__item header__item--catalog">
+                     <a href="catalog.html" class="header__link">
+                        Catalog
+                     </a>
+                     <img src="../img/svg/arrow-down.svg" alt="" aria-hidden="true">
+                  </li>
+                  <li class="header__item">
+                     <a href="about.html" class="header__link header__link--current">
+                        About Us
+                     </a>
+                  </li>
+                  <li class="header__item">
+                     <a href="contact.html" class="header__link">
+                        Contact Us
+                     </a>
+                  </li>
+               </ul>
+               <div class="header__actions">
+                  <a id="openAccount" class="header-actions__link" href="/account" aria-label="Account">
+                     <svg class="header-actions__iconu">
+                        <use xlink:href="../img/svg/sprite.svg#user"></use>
+                     </svg>
+                  </a>
+                  <a class="header-actions__link" href="/cart" aria-label="Cart">
+                     <svg class="header-actions__iconc">
+                        <use xlink:href="../img/svg/sprite.svg#shopping-cart"></use>
+                     </svg>
+                     <span id="cartCounter" class="cart-counter">0</span>
+                  </a>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <main class="main">
+         <section class="about-hero">
+            <div class="about-hero__bg">
+               <img src="../img/webp/about-bg.webp" alt="About Us background" loading="eager" width="1330" height="800">
+            </div>
+            <div class="about-hero__container">
+               <div class="about-hero__content">
+                  <h1 class="about-hero__title">About Us</h1>
+                  <p class="about-hero__text">Duis vestibulum elit vel neque pharetra vulputate</p>
+                  <p class="about-hero__text">Duis rutrum non risus in imperdiet.</p>
+               </div>
+            </div>
+         </section>
+
+         <section class="about-features">
+            <div class="about-features__container">
+               <div class="about-features__grid">
+                  <div class="about-features__item">
+                     <div class="about-features__icon">
+                        <svg viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+                           <path id="Rectangle" d="M62 0L0 0L0 62L62 62L62 0Z" fill="var(--maincolor)" fill-rule="evenodd" />
+                           <path id="icon" d="M29.157 57L29.157 37.5928L31.294 37.5928C31.294 37.6518 31.302 37.711 31.302 37.772C31.302 44.1193 31.302 50.4669 31.302 56.8149C31.302 56.8769 31.295 56.938 31.292 57L29.157 57ZM15.715 48.1108C11.6451 44.5758 8.98085 39.696 8.20805 34.3608L10.376 34.3608C10.499 34.9298 10.606 35.4938 10.745 36.0518C11.5203 39.2095 13.05 42.1322 15.203 44.5688C17.8063 47.5689 21.2346 49.7373 25.061 50.8032C25.776 51.0032 26.514 51.1332 27.239 51.3032C27.285 51.3152 27.357 51.3668 27.357 51.4028C27.365 52.0928 27.357 52.7819 27.357 53.5029C23.0321 52.8839 18.984 51.0096 15.715 48.1108ZM33.108 51.3271C37.3602 50.6484 41.2858 48.6335 44.316 45.5742C47.3743 42.5384 49.388 38.6085 50.066 34.353L52.226 34.353C51.5256 39.1762 49.2863 43.6441 45.8415 47.0918C42.3967 50.5395 37.9306 52.7823 33.108 53.4868L33.108 51.3271ZM33.352 40.5962C33.352 40.5452 33.436 40.4732 33.495 40.4502C34.2405 40.1689 34.9482 39.796 35.602 39.3408C37.24 38.2156 38.4904 36.612 39.182 34.749C39.192 34.702 39.2194 34.6605 39.2587 34.6328C39.298 34.6052 39.3464 34.5935 39.394 34.6001C40.039 34.6071 40.685 34.6001 41.329 34.6001L41.483 34.6001C40.934 36.5398 39.8976 38.3065 38.4726 39.7324C37.0476 41.1583 35.2814 42.1958 33.342 42.7461C33.345 42.0191 33.342 41.3081 33.352 40.6001L33.352 40.5962ZM18.972 34.6011L19.954 34.6011C20.333 34.6011 20.712 34.6011 21.091 34.6011C21.1292 34.5954 21.1681 34.6046 21.1999 34.6265C21.2316 34.6484 21.2538 34.6815 21.262 34.7192C21.7021 35.9131 22.3733 37.0079 23.2373 37.9419C24.1013 38.8759 25.1411 39.6306 26.297 40.1621C26.525 40.2721 26.768 40.3521 26.997 40.4561C27.046 40.4791 27.112 40.5429 27.112 40.5889C27.119 41.2959 27.112 42.0039 27.112 42.7109C27.112 42.7209 27.102 42.7312 27.097 42.7412C25.161 42.1896 23.3981 41.1519 21.976 39.7271C20.5539 38.3022 19.5198 36.5382 18.972 34.6011ZM30.234 34.7241C29.3762 34.7212 28.5543 34.3789 27.948 33.772C27.3417 33.1651 27.0002 32.3427 26.998 31.4849C27.002 30.6273 27.345 29.8062 27.9522 29.2007C28.5594 28.5952 29.3815 28.2545 30.239 28.2529C30.6613 28.2551 31.0789 28.3414 31.4675 28.5063C31.8562 28.6713 32.2082 28.9117 32.5031 29.2139C32.7979 29.5161 33.0298 29.874 33.1851 30.2666C33.3405 30.6592 33.4163 31.0788 33.408 31.501C33.4132 31.9213 33.3351 32.3385 33.1782 32.7285C33.0213 33.1185 32.7888 33.4737 32.494 33.7734C32.1992 34.0732 31.848 34.3113 31.4607 34.4746C31.0733 34.6379 30.6574 34.7233 30.237 34.7251L30.234 34.7241ZM36.57 32.564L36.34 32.564L36.34 30.4141L55.747 30.4141L55.747 32.5532C55.668 32.5532 55.59 32.5649 55.511 32.5649L36.57 32.564ZM4.74805 32.5562L4.74805 30.4268L24.114 30.4268L24.114 32.5562L4.74805 32.5562ZM50.04 28.4658C49.5322 25.4115 48.3289 22.5151 46.523 20C44.8594 17.6593 42.72 15.6967 40.245 14.2402C38.2228 13.0398 36.0055 12.2036 33.694 11.77L33.117 11.6621L33.117 9.48682C37.2171 10.0663 41.0733 11.781 44.25 14.437C48.5964 17.9985 51.4542 23.0564 52.262 28.6172C52.182 28.6172 52.128 28.625 52.072 28.625C51.462 28.625 50.85 28.625 50.24 28.625L50.231 28.625C50.108 28.628 50.062 28.5938 50.04 28.4658ZM10.268 28.627C9.61205 28.627 8.95605 28.627 8.30005 28.627C8.27065 28.6231 8.24157 28.617 8.21305 28.6089C8.93946 23.6312 11.3107 19.0398 14.949 15.5659C18.3382 12.2873 22.6795 10.1678 27.349 9.51123L27.349 11.6611C27.049 11.7181 26.749 11.7759 26.449 11.8379C23.8469 12.3688 21.3759 13.4105 19.179 14.9028C16.1131 16.9594 13.6621 19.809 12.087 23.1479C11.2803 24.842 10.7164 26.6416 10.412 28.4932C10.396 28.5882 10.37 28.6309 10.272 28.6309L10.268 28.627ZM21.058 28.3809C20.413 28.3749 19.767 28.3809 19.123 28.3809L18.972 28.3809C19.5233 26.4411 20.5613 24.6744 21.9873 23.2485C23.4134 21.8227 25.1802 20.785 27.12 20.2339L27.12 20.4209C27.12 21.0489 27.12 21.6772 27.12 22.3062C27.1285 22.3599 27.1163 22.4149 27.0859 22.46C27.0555 22.5051 27.0091 22.5366 26.956 22.5488C25.6558 23.0319 24.475 23.7898 23.4941 24.7705C22.5132 25.7512 21.7553 26.9318 21.272 28.2319C21.2612 28.2785 21.2341 28.3194 21.1955 28.3477C21.157 28.3759 21.1097 28.3899 21.062 28.3862L21.058 28.3809ZM39.196 28.248C38.711 26.9306 37.9441 25.7352 36.9488 24.7451C35.9535 23.755 34.754 22.9942 33.434 22.5161C33.408 22.5061 33.382 22.491 33.352 22.478L33.352 20.2412C35.2909 20.7894 37.0571 21.8248 38.4823 23.249C39.9076 24.6732 40.9444 26.4385 41.494 28.377L40.786 28.377C40.322 28.377 39.858 28.377 39.394 28.377L39.386 28.377C39.3438 28.3825 39.301 28.3724 39.2657 28.3486C39.2304 28.3249 39.2049 28.2892 39.194 28.248L39.196 28.248ZM29.167 25.3828L29.167 6L31.294 6L31.294 25.3818L29.167 25.3828Z" fill="rgba(255,255,255,1)" fill-rule="nonzero" />
+                        </svg>
+                     </div>
+                     <h3 class="about-features__title">Superior Accuracy</h3>
+                     <p class="about-features__text">Qewist vestibulum elit vel neque pharetra vulputate scelerisque nisi urna.</p>
+                  </div>
+                  <div class="about-features__item">
+                     <div class="about-features__icon">
+                        <img src="../img/svg/awards.svg" alt="Awards icon">
+                     </div>
+                     <h3 class="about-features__title">Awards</h3>
+                     <p class="about-features__text">Vestibulurn elit vel neque pharetra vulputate. Quisque scelerisque nisi urna.</p>
+                  </div>
+                  <div class="about-features__item">
+                     <div class="about-features__icon">
+                        <svg viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+                           <path id="Rectangle" d="M62 0L0 0L0 62L62 62L62 0Z" fill="var(--maincolor)" fill-rule="evenodd" />
+                           <path id="icon" d="M27.107 55.3741C23.6991 53.8759 20.4516 52.0371 17.414 49.8853L16.604 49.354C16.2441 49.0598 15.8129 48.8659 15.354 48.792C15.0259 48.8227 14.7167 48.9594 14.473 49.1812C13.346 49.9972 12.182 50.7002 10.836 51.5132C10.224 51.8822 9.59096 52.2641 8.91196 52.6861C8.74493 52.7898 8.55106 52.8423 8.35452 52.8365C8.15798 52.8306 7.96752 52.7669 7.80698 52.6534C7.64593 52.5397 7.52206 52.3811 7.4509 52.1973C7.37973 52.0135 7.36447 51.8126 7.40701 51.6202C9.03701 44.2682 10.549 37.4514 12.117 30.3804C12.1464 30.2473 12.2027 30.1214 12.2825 30.0108C12.3623 29.9002 12.4639 29.8072 12.581 29.7373C12.6984 29.6679 12.8288 29.6232 12.9641 29.606C13.0995 29.5888 13.2369 29.5993 13.368 29.6372L34.162 35.5772C34.3398 35.6278 34.5002 35.727 34.6252 35.8633C34.7501 35.9996 34.8349 36.1676 34.87 36.3492C34.9048 36.5305 34.8888 36.7179 34.8237 36.8907C34.7586 37.0635 34.6469 37.215 34.501 37.3282L28.446 42.0284C30.3534 42.5474 32.3202 42.8161 34.297 42.8282C38.0113 42.8064 41.6495 41.7726 44.82 39.8374C48.1971 37.7536 51.2656 35.2064 53.936 32.271C54.0916 32.1085 54.2975 32.0037 54.5203 31.9727C54.7431 31.9417 54.9699 31.9863 55.164 32.1001C55.3582 32.2144 55.5081 32.3909 55.5894 32.6011C55.6708 32.8113 55.6787 33.0431 55.612 33.2583C54.5504 36.9245 53.1584 40.4868 51.453 43.9014C49.69 47.3833 47.222 50.4601 44.206 52.937C41.3105 55.3739 37.6524 56.7188 33.868 56.7373C31.5483 56.7162 29.2537 56.2533 27.107 55.3741ZM17.701 47.6812L18.514 48.2163C21.44 50.2906 24.5666 52.066 27.847 53.5161C29.7595 54.3024 31.8042 54.7179 33.872 54.7403C37.1997 54.7164 40.4137 53.5269 42.955 51.3785C45.7581 49.0725 48.0507 46.2083 49.687 42.9683C50.748 40.9044 51.661 38.7676 52.419 36.5743C50.4109 38.4716 48.2022 40.1446 45.832 41.564C42.356 43.6795 38.3691 44.8078 34.3 44.8272C31.4678 44.7969 28.6597 44.3034 25.987 43.3662C25.8157 43.3084 25.6634 43.2054 25.5461 43.0679C25.4288 42.9304 25.351 42.7632 25.321 42.585C25.2911 42.4067 25.3101 42.224 25.3759 42.0557C25.4418 41.8874 25.5521 41.7401 25.695 41.6294L31.718 36.9541L13.84 31.8472C12.518 37.8132 11.229 43.6233 9.86801 49.7583C11.149 48.9863 12.259 48.3151 13.299 47.5581C13.882 47.0849 14.6035 46.8148 15.354 46.7891C16.2065 46.8502 17.0232 47.1605 17.701 47.6812ZM47.473 31.4024L45.267 30.7671L26.718 25.4263C26.5407 25.3752 26.381 25.2759 26.2566 25.1397C26.1321 25.0034 26.0478 24.8355 26.013 24.6543C25.9781 24.473 25.9941 24.2856 26.0592 24.1128C26.1244 23.94 26.2361 23.7885 26.382 23.6753L32.31 19.0752C30.5413 18.3975 28.661 18.0583 26.767 18.0752C23.2761 18.145 19.8538 19.057 16.791 20.7334C12.9534 22.822 9.56653 25.6484 6.82498 29.0503C6.67822 29.2272 6.47502 29.348 6.24954 29.3926C6.02406 29.4372 5.79008 29.4031 5.587 29.2954C5.38375 29.1878 5.22381 29.0132 5.13418 28.8013C5.04456 28.5895 5.03074 28.3532 5.095 28.1324C5.95969 25.0295 7.07121 22.0008 8.41897 19.0752C9.7887 16.1052 11.5673 13.3414 13.703 10.8643C15.4163 8.8495 17.5142 7.19679 19.874 6.00248C22.1132 4.8981 24.5773 4.32583 27.074 4.33109C29.962 4.37444 32.8084 5.0257 35.428 6.24222C38.1461 7.55767 40.7348 9.12533 43.16 10.9244C43.6 11.2244 44.052 11.5432 44.496 11.8472C44.774 12.0791 45.1035 12.2411 45.457 12.3194C45.6778 12.2915 45.886 12.2007 46.057 12.0581C47.315 11.1861 48.63 10.3742 50.024 9.51517C50.649 9.13217 51.293 8.73314 51.969 8.30814C52.1361 8.20275 52.3308 8.14917 52.5284 8.15433C52.7259 8.15949 52.9176 8.22346 53.079 8.33744C53.2404 8.45119 53.3645 8.60979 53.4357 8.79398C53.5069 8.97817 53.5219 9.17937 53.479 9.37211L48.726 30.6582C48.6963 30.7916 48.6397 30.9173 48.5595 31.0279C48.4794 31.1385 48.3774 31.2316 48.26 31.3013C48.1054 31.3922 47.9293 31.4404 47.75 31.4405C47.6563 31.4408 47.5631 31.428 47.473 31.4024ZM34.695 17.9732C34.8424 18.052 34.9676 18.1664 35.0594 18.3062C35.1511 18.4459 35.2063 18.6069 35.22 18.7735C35.2345 18.9398 35.2071 19.1068 35.1404 19.2598C35.0737 19.4128 34.9697 19.5469 34.838 19.6495L29.164 24.0494L45.82 28.8492L47.006 29.1905L51.006 11.2593C49.661 12.0893 48.389 12.8752 47.196 13.7032C46.6953 14.0848 46.0881 14.301 45.459 14.3213C44.6942 14.2672 43.9645 13.9797 43.368 13.4981C42.919 13.1891 42.463 12.8734 42.022 12.5684C39.6973 10.8434 37.218 9.337 34.616 8.0684C32.2523 6.96723 29.6832 6.37542 27.076 6.33207C24.8847 6.32731 22.722 6.82866 20.756 7.79642C18.6347 8.87435 16.7496 10.3642 15.211 12.1792C13.1965 14.5169 11.5196 17.1253 10.229 19.9283C9.57297 21.3173 8.96596 22.7953 8.38296 24.4283C10.6063 22.2635 13.1238 20.4233 15.861 18.9615C19.2108 17.1338 22.9527 16.1428 26.768 16.0733C29.5268 16.0403 32.2506 16.6937 34.695 17.9732Z" fill="rgba(255,255,255,1)" fill-rule="nonzero" />
+                        </svg>
+                     </div>
+                     <h3 class="about-features__title">Ecological</h3>
+                     <p class="about-features__text">Elit vel neque duis vestibulum pharetra vulputateuisque scelerisque nisi urna.</p>
+                  </div>
+                  <div class="about-features__item">
+                     <div class="about-features__icon">
+                        <svg viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg" width="60" height="60" style="background: transparent;">
+                           <path id="Rectangle" d="M62 0L0 0L0 62L62 62L62 0Z" fill="none" stroke="var(--maincolor)" stroke-width="2" fill-rule="evenodd" />
+                           <path id="icon" d="M27.0122 56.5657C26.8054 56.4559 26.6367 56.286 26.5283 56.0784C26.42 55.8708 26.3771 55.6351 26.4053 55.4026C26.4133 53.8026 26.4053 52.2029 26.4053 50.5969L26.4053 49.9968C23.5174 49.4745 20.7448 48.4446 18.2162 46.9548C15.6568 45.4908 13.4646 43.4629 11.8059 41.0252C10.1472 38.5874 9.06559 35.8036 8.64319 32.8855C8.39219 31.3975 8.35429 29.8725 8.24329 28.3635C8.21414 28.1199 8.27109 27.8738 8.40442 27.6677C8.53776 27.4617 8.73904 27.3088 8.97327 27.2356C9.19317 27.1521 9.43475 27.1454 9.65894 27.2166C9.88313 27.2877 10.0768 27.4327 10.2083 27.6277C10.3295 27.8544 10.4168 28.0978 10.4673 28.3499C11.2727 32.0088 13.4625 35.2141 16.5783 37.2947C19.0445 38.8155 21.9216 39.5343 24.8132 39.3518C25.3252 39.3368 25.8362 39.3055 26.4022 39.2805L26.4022 38.6609C26.4022 37.0259 26.4022 35.3887 26.4022 33.7527C26.3727 33.5207 26.4142 33.2852 26.5214 33.0774C26.6285 32.8696 26.7961 32.6991 27.0022 32.5886C27.2126 32.4863 27.4488 32.4494 27.6804 32.4822C27.9121 32.515 28.1286 32.616 28.3023 32.7727C33.3023 36.3447 38.3053 39.9131 43.3113 43.4778C43.5008 43.5692 43.6608 43.7118 43.773 43.8899C43.8851 44.068 43.9448 44.2742 43.9453 44.4846C43.9458 44.6951 43.8871 44.9012 43.7759 45.0798C43.6646 45.2585 43.5054 45.4025 43.3163 45.4949C38.3163 49.1249 33.3122 52.7517 28.3042 56.3757C28.0735 56.5652 27.7883 56.6758 27.4902 56.6917C27.3231 56.6884 27.1592 56.6452 27.0122 56.5657ZM11.8843 36.4807C13.1627 39.7446 15.4244 42.5304 18.3562 44.4519C21.0538 46.2582 24.1196 47.4413 27.3312 47.9158C28.3312 48.0678 28.5862 48.3666 28.5892 49.3806C28.5892 50.1556 28.5892 50.9308 28.5892 51.7068L28.5892 53.4675L40.9773 44.4929L28.5912 35.6609C28.5912 37.1679 28.5912 38.5275 28.5912 39.8855C28.5912 40.9305 28.2912 41.3018 27.2362 41.3538C25.694 41.4802 24.1455 41.5137 22.5992 41.4539C18.7697 41.2582 15.1675 39.5767 12.5582 36.7669C12.2942 36.4879 12.0402 36.1988 11.7822 35.9148C11.7675 36.108 11.8022 36.3018 11.8832 36.4778L11.8843 36.4807ZM44.9232 43.7307C44.813 43.6163 44.7277 43.4803 44.6726 43.3313C44.6176 43.1823 44.594 43.0236 44.6034 42.865C44.6128 42.7064 44.6549 42.5514 44.7272 42.4099C44.7994 42.2684 44.9002 42.1433 45.0232 42.0427C45.7992 41.1787 46.5552 40.2976 47.3232 39.4255L47.2233 39.2595L44.8383 39.2595C43.6623 39.2595 42.4883 39.2498 41.3123 39.2678C41.0998 39.2734 40.8935 39.3403 40.7183 39.4607C40.5421 39.6125 40.3217 39.7033 40.0897 39.7195C39.8578 39.7357 39.6268 39.6763 39.4313 39.5505C39.229 39.4307 39.0732 39.2459 38.9895 39.0261C38.9058 38.8064 38.8989 38.5647 38.9702 38.3406C39.2622 37.0686 39.6182 35.8068 39.8342 34.5208C40.1112 32.8628 40.2782 31.1867 40.5012 29.4607L31.8123 29.4607C31.8123 30.2067 31.8123 30.9607 31.8123 31.7097C31.8123 31.9347 31.8232 32.1586 31.8052 32.3816C31.7947 32.6676 31.6717 32.9378 31.4629 33.1336C31.2541 33.3293 30.9763 33.4346 30.6902 33.4265C30.4126 33.4189 30.1491 33.3023 29.9569 33.1018C29.7647 32.9014 29.6592 32.6334 29.6632 32.3557C29.6432 31.5807 29.6563 30.8046 29.6563 30.0296L29.6563 29.4475L21.0933 29.4475C21.1313 30.0595 21.1242 30.6766 21.2162 31.2766C21.5062 33.1446 21.8213 35.0098 22.1493 36.8718C22.2823 37.6238 22.0212 38.1965 21.4092 38.3425C20.7422 38.5015 20.2402 38.1428 20.0492 37.3748C19.4463 34.8987 19.0763 32.3719 18.9442 29.8269C18.9382 29.7099 18.9233 29.5937 18.9063 29.4197L18.3342 29.4197C16.3582 29.4197 14.3832 29.4197 12.4072 29.4197C12.1489 29.449 11.8884 29.388 11.6697 29.2473C11.451 29.1066 11.2877 28.895 11.2073 28.6477C11.1559 28.4875 11.1426 28.3174 11.1685 28.1511C11.1943 27.9849 11.2585 27.8273 11.3561 27.6902C11.4536 27.5531 11.5819 27.4404 11.7305 27.3616C11.8791 27.2827 12.0441 27.2395 12.2123 27.2356C12.7373 27.1976 13.2673 27.2229 13.7953 27.2229L18.7653 27.2229C19.0133 24.5999 19.2552 22.0229 19.5012 19.4109L18.9012 19.4109C16.7723 19.4109 14.6432 19.4217 12.5132 19.3987C12.3574 19.3773 12.1993 19.4158 12.0706 19.5061C11.9418 19.5964 11.8521 19.7317 11.8192 19.8855C11.1857 21.5412 10.7582 23.2685 10.5463 25.0286C10.5431 25.2974 10.4437 25.5563 10.2661 25.7581C10.0885 25.9599 9.84448 26.0914 9.57825 26.1287C9.34707 26.1622 9.11141 26.1149 8.91102 25.9949C8.71062 25.8748 8.55779 25.6891 8.47828 25.4695C8.39961 25.1543 8.38458 24.8267 8.43421 24.5056C8.67434 22.4697 9.20928 20.4798 10.0222 18.5979C13.2792 11.2369 18.8222 6.67772 26.6332 5.10572C31.4155 4.19763 36.3638 4.88384 40.7184 7.05934C45.073 9.23484 48.5934 12.7794 50.7393 17.1487C52.417 20.4089 53.2742 24.0292 53.2366 27.6956C53.1989 31.3619 52.2675 34.9637 50.5232 38.1887C49.4896 40.1876 48.146 42.0101 46.5422 43.5886C46.4252 43.7194 46.2833 43.8256 46.1249 43.9011C45.9664 43.9767 45.7946 44.02 45.6193 44.0286C45.3568 44.0246 45.1074 43.9177 44.9232 43.7307ZM48.3232 37.0847C48.6462 37.0847 48.7643 36.9176 48.8843 36.6716C49.7509 34.9137 50.3674 33.0432 50.7162 31.1145C50.8162 30.5695 50.8722 30.0146 50.9542 29.4216C48.2072 29.4216 45.5542 29.4218 42.9032 29.4158C42.5782 29.4158 42.5653 29.5956 42.5503 29.8416C42.5063 30.5616 42.4812 31.2868 42.3832 31.9998C42.1522 33.6648 41.8832 35.3247 41.6152 37.0447C41.6898 37.0597 41.7653 37.0692 41.8412 37.0735L44.9242 37.0735C46.0575 37.0762 47.1899 37.0801 48.3232 37.0847ZM42.2842 19.4109C42.1897 19.4138 42.0956 19.4224 42.0022 19.4368C42.2462 22.0368 42.4912 24.6106 42.7352 27.1946L51.0002 27.1946C51.0162 27.1231 51.0272 27.0508 51.0332 26.9778C50.9897 24.4789 50.4771 22.0106 49.5222 19.7009C49.4665 19.6184 49.3922 19.55 49.3054 19.5012C49.2186 19.4524 49.1217 19.4244 49.0222 19.4197C47.7982 19.4097 46.5742 19.4055 45.3502 19.4075L42.2842 19.4109ZM21.0692 27.1878L29.6172 27.1878L29.6172 19.4417L21.8252 19.4417C21.3062 21.9909 21.0532 24.5872 21.0702 27.1887L21.0692 27.1878ZM31.8552 27.1819L40.4392 27.1819C40.4512 24.5778 40.1928 21.9792 39.6682 19.4285L31.8552 19.4285L31.8552 27.1819ZM37.8073 9.02076C39.3879 11.3386 40.5427 13.9197 41.2173 16.6428C41.2259 16.7367 41.254 16.8277 41.2999 16.9099C41.3459 16.9922 41.4086 17.0638 41.484 17.1204C41.5594 17.1769 41.6458 17.217 41.7377 17.238C41.8295 17.2591 41.9247 17.2609 42.0172 17.2429C43.9062 17.2129 45.7983 17.2307 47.6873 17.2307L48.3612 17.2307C45.8401 12.8144 41.7769 9.48466 36.9513 7.88063C37.2993 8.33963 37.5633 8.67776 37.8073 9.02076ZM19.5162 17.2395C19.6049 17.2557 19.6959 17.2536 19.7836 17.2327C19.8712 17.2118 19.9535 17.1729 20.0253 17.1184C20.097 17.064 20.1567 16.9951 20.2004 16.9163C20.2442 16.8375 20.2709 16.7506 20.2792 16.6609C21.0358 13.5463 22.4404 10.6259 24.4013 8.09059C24.4243 8.06159 24.4192 8.01073 24.4292 7.95973C20.6352 8.72273 14.3782 13.8598 13.1842 17.2278C14.3432 17.2278 15.4842 17.2278 16.6252 17.2278C17.5902 17.2228 18.5542 17.2265 19.5162 17.2395ZM29.1043 17.2395C29.5683 17.2465 29.6673 17.0956 29.6653 16.6546C29.6473 13.6236 29.6552 10.5947 29.6542 7.56568C29.6542 7.41268 29.6412 7.26553 29.6312 7.03053C29.3372 7.13053 29.0783 7.19745 28.8373 7.30445C27.6703 7.85011 26.6582 8.67904 25.8932 9.71559C24.4628 11.6093 23.3865 13.7461 22.7162 16.0227C22.5952 16.3937 22.4912 16.7675 22.3622 17.1985C22.6002 17.2135 22.7623 17.2297 22.9263 17.2297L24.7433 17.2297L26.2603 17.2297C27.2093 17.2237 28.1562 17.2256 29.1052 17.2376L29.1043 17.2395ZM31.8462 17.1956L39.1083 17.1956C39.0811 17.0336 39.0433 16.8736 38.9952 16.7166C38.4782 15.3536 38.0242 13.9599 37.4192 12.6389C36.6519 10.8488 35.4569 9.27401 33.9392 8.05348C33.3331 7.55327 32.615 7.2073 31.8462 7.04469L31.8462 17.1956Z" fill="var(--maincolor)" fill-rule="nonzero" />
+                        </svg>
+                     </div>
+                     <h3 class="about-features__title">Shipping Worlwide</h3>
+                     <p class="about-features__text">Quisque scelerisque nisi urna. Duis vestibulum elit vel neque pharetra vulputate.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="new-arrivals">
+            <div class="new-arrivals__container">
+               <div class="new-arrivals__content">
+                  <div class="new-arrivals__left">
+                     <h2 class="new-arrivals__title">New Arrivals Every Week</h2>
+                     <p class="new-arrivals__text">Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis rutrum non risus in imperdiet. Proin molestie accumsan nulla sit. Quisque scelerisque nisi urnauis rutrum.</p>
+                     <p class="new-arrivals__text">Vitrumuis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis vestibulum elit vel neque pharetra vulputateuisque scelerisque nisi urna.</p>
+                     <a href="catalog.html" class="btn btn--primary new-arrivals__btn">See All Models</a>
+                  </div>
+                  <div class="new-arrivals__right">
+                     <img src="../img/webp/newarrival.webp" alt="New arrivals" class="new-arrivals__image" loading="lazy" width="600" height="400">
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="team">
+            <div class="team__container">
+               <h2 class="team__title">Our Incredible Team</h2>
+               <div class="team__grid">
+                  <div class="team__member">
+                     <div class="team__photo">
+                        <img src="../img/webp/NF.webp" alt="Nataliia Foster" loading="lazy" width="410" height="340">
+                     </div>
+                     <h3 class="team__name">NATALIIA FOSTER</h3>
+                     <p class="team__position">Product Manager</p>
+                  </div>
+                  <div class="team__member">
+                     <div class="team__photo">
+                        <img src="../img/webp/AT.webp" alt="Alexandra Thompson" loading="lazy" width="410" height="340">
+                     </div>
+                     <h3 class="team__name">ALEXANDRA THOMPSON</h3>
+                     <p class="team__position">Graphic Designer</p>
+                  </div>
+                  <div class="team__member">
+                     <div class="team__photo">
+                        <img src="../img/webp/IB.webp" alt="Iryna Brooks" loading="lazy" width="410" height="340">
+                     </div>
+                     <h3 class="team__name">IRYNA BROOKS</h3>
+                     <p class="team__position">Head Of Marketing</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="offer">
+            <div class="offer__container">
+               <img class="offer__bg" src="../img/webp/offer50.webp" alt="Special offer background" loading="lazy" width="1330" height="407">
+               <div class="offer__content">
+                  <div class="offer__left">
+                     <p class="offer__discount">50%</p>
+                     <p class="offer__subtitle">
+                        Curabitur vulputate arcu odio, ac facilisis diam
+                     </p>
+                  </div>
+                  <div class="offer__right">
+                     <h2 class="offer__title">Offer Of The Month</h2>
+                     <p class="offer__text">
+                        Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                        Ut imperdiet et leo in vulputate.
+                     </p>
+                     <a href="catalog.html" class="btn offer__btn">
+                        Get Offer Today
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="benefits" aria-labelledby="benefits-title">
+            <div class="benefits__container">
+               <h2 id="benefits-title" class="benefits__title">Our Benefits</h2>
+               <ul class="benefits__list">
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/plane.svg" alt="Plane icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Velit nisl sodales eget donec quis.<br>volutpat orci.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/truck.svg" alt="Truck icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Dolor eu varius. Morbi<br>fermentum velit nisl.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/coins.svg" alt="Coins icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Malesuada fames ac ante<br>ipsum primis in faucibus.
+                     </p>
+                  </li>
+                  <li class="benefits__item">
+                     <div class="benefits__icon">
+                        <img src="../img/svg/gradcap.svg" alt="Graduation cap icon" aria-hidden="true">
+                     </div>
+                     <p class="benefits__text">
+                        Nisl sodales eget donec quis.<br>volutpat orci.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </section>
+      </main>
+      <footer class="footer">
+         <div class="footer__container">
+            <div class="footer__columns">
+               <div class="footer__column">
+                  <h3 class="footer__heading"><a href="about.html" class="footer__heading-link">About Us</a></h3>
+                  <ul class="footer__list">
+                     <li>Organisation</li>
+                     <li>Partners</li>
+                     <li>Clients</li>
+                  </ul>
+                  <h3 class="footer__heading">Shipping Information</h3>
+                  <p class="footer__text">
+                     Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
+                     Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum,
+                     lectus in convallis pulvinar, enim elit porta sapien...
+                  </p>
+               </div>
+               <div class="footer__column">
+                  <h3 class="footer__heading">Interesting Links</h3>
+                  <ul class="footer__list">
+                     <li><a href="#">Photo Gallery</a></li>
+                     <li><a href="#">Our Team</a></li>
+                     <li><a href="#">Socials</a></li>
+                  </ul>
+                  <h3 class="footer__heading">Achievements</h3>
+                  <ul class="footer__list">
+                     <li><a href="#">Winning Awards</a></li>
+                     <li><a href="#">Press</a></li>
+                     <li><a href="#">Our Amazing Clients</a></li>
+                  </ul>
+               </div>
+               <div class="footer__column">
+                  <h3 class="footer__heading"><a href="contact.html" class="footer__heading-link">Contact Us</a></h3>
+                  <address class="footer__contact">
+                     <p>
+                        Bendum dolor eu varius. Morbi fermentum velit sodales egestas,
+                        volutpat orci. Sed ipsum felis, tristique egestas et, convallis ac velit.
+                     </p>
+                     <div class="footer__contact-row">
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/phone.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>Phone: <a href="tel:+632366322">(+63) 236 6322</a></span>
+                        </p>
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/email.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <a href="mailto:public@news.com">public@news.com</a>
+                        </p>
+                     </div>
+                     <div class="footer__contact-row">
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/clock.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>Mon – Fri: 10am – 6pm<br>Sat – Sun: 10am – 6pm</span>
+                        </p>
+                        <p class="footer__contact-item">
+                           <img src="../img/svg/location.svg" alt="" class="footer__icon" aria-hidden="true">
+                           <span>639 Jade Valley,<br>Washington Dc</span>
+                        </p>
+                     </div>
+                  </address>
+               </div>
+            </div>
+            <p class="footer__copy">© Copyright 2025</p>
+         </div>
+      </footer>
+   </div>
+   <div class="account-modal" role="dialog" aria-modal="true" style="display:none">
+      <div class="account-modal__box">
+         <button id="closeModal" class="account-modal__close" aria-label="Close">×</button>
+         <form id="loginForm" class="account-modal__form" novalidate>
+            <label class="account-modal__field">
+               <span>Email address *</span>
+               <input id="loginEmail" type="email" required>
+            </label>
+            <label class="account-modal__field account-modal__field--pwd">
+               <span>Password *</span>
+               <input id="loginPassword" type="password" required>
+               <button id="togglePwd" type="button" class="account-modal__pwd-toggle" aria-label="Show/Hide">👁</button>
+            </label>
+            <div class="account-modal__bottom">
+               <label class="account-modal__remember">
+                  <input type="checkbox" id="loginRemember">
+                  <span>Remember me</span>
+               </label>
+               <a href="#" class="account-modal__forgot">Forgot Your Password?</a>
+            </div>
+            <button type="submit" class="btn btn--primary account-modal__submit">LOG IN</button>
+            <p id="loginMsg" class="account-modal__msg"></p>
+         </form>
+      </div>
+   </div>
+   <script src="../js/main.js"></script>
+</body>
+
+</html>

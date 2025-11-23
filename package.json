@@ -7,10 +7,22 @@
     "url": "https://autocode.git.epam.com/campus_javascript/capstone-project/project-template.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Your Name Surname",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"Dummy build script required for Autocode Compile\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass src/scss:dist/css --no-source-map",
+    "dev": "concurrently \"sass src/scss:dist/css --watch\" \"live-server --port=3000 --open=/src/index.html\"",
+    "lint": "eslint src/js/**/*.js && stylelint \"src/scss/**/*.scss\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.93.3",
+    "eslint": "^8.57.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0"
   }
 }

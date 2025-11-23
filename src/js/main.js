@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
          if (emailOk && pwdOk) {
             if (loginMsg) loginMsg.textContent = 'Logged in successfully!';
             setTimeout(hideAccountModal, 800);
-         } else {
+         }
+         if (!emailOk || !pwdOk) {
             if (loginMsg) loginMsg.textContent =
                'Please check email and password.';
          }

@@ -24,8 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
          subTotal = originalSubTotal - discount;
          if (discountRow) discountRow.style.display = 'flex';
          if (discountEl) discountEl.textContent = formatPrice(discount);
-      } else {
-         if (discountRow) discountRow.style.display = 'none';
+      }
+      if (originalSubTotal <= 3000 && discountRow) {
+         discountRow.style.display = 'none';
       }
       
       const total = subTotal + shipping;
@@ -38,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
    function renderCartItem(item, index) {
       const total = item.price * item.qty;
       const imagePath = item.image || '../img/webp/catalog/case-1.webp';
-      const uniqueId = `${item.id}_${item.color || ''}_${item.size || ''}_${index}`;
       
       return `
          <tr class="cart-table__row" data-id="${item.id}" data-color="${item.color || ''}" data-size="${item.size || ''}" data-index="${index}">
@@ -86,65 +86,64 @@ document.addEventListener('DOMContentLoaded', () => {
       attachEventListeners();
    }
 
+   function getItemFromRow(row) {
+      const id = row.dataset.id;
+      const color = row.dataset.color;
+      const size = row.dataset.size;
+      const cart = getCart();
+      return cart.find(i => 
+         i.id === id && 
+         (i.color || '') === color && 
+         (i.size || '') === size
+      );
+   }
+
+   function handleMinusClick(e) {
+      const row = e.target.closest('tr');
+      const item = getItemFromRow(row);
+      if (item && item.qty > 1) {
+         item.qty--;
+         saveCart(getCart());
+         renderCart();
+      }
+   }
+
+   function handlePlusClick(e) {
+      const row = e.target.closest('tr');
+      const item = getItemFromRow(row);
+      if (item) {
+         item.qty++;
+         saveCart(getCart());
+         renderCart();
+      }
+   }
+
+   function handleDeleteClick(e) {
+      const row = e.target.closest('tr');
+      const id = row.dataset.id;
+      const color = row.dataset.color;
+      const size = row.dataset.size;
+      const cart = getCart();
+      const filtered = cart.filter(item => 
+         !(item.id === id && 
+           (item.color || '') === color && 
+           (item.size || '') === size)
+      );
+      saveCart(filtered);
+      renderCart();
+   }
+
    function attachEventListeners() {
       document.querySelectorAll('.qty__btn--minus').forEach(btn => {
-         btn.addEventListener('click', (e) => {
-            const row = e.target.closest('tr');
-            const id = row.dataset.id;
-            const color = row.dataset.color;
-            const size = row.dataset.size;
-            
-            const cart = getCart();
-            const item = cart.find(i => 
-               i.id === id && 
-               (i.color || '') === color && 
-               (i.size || '') === size
-            );
-            if (item && item.qty > 1) {
-               item.qty--;
-               saveCart(cart);
-               renderCart();
-            }
-         });
+         btn.addEventListener('click', handleMinusClick);
       });
 
       document.querySelectorAll('.qty__btn--plus').forEach(btn => {
-         btn.addEventListener('click', (e) => {
-            const row = e.target.closest('tr');
-            const id = row.dataset.id;
-            const color = row.dataset.color;
-            const size = row.dataset.size;
-            
-            const cart = getCart();
-            const item = cart.find(i => 
-               i.id === id && 
-               (i.color || '') === color && 
-               (i.size || '') === size
-            );
-            if (item) {
-               item.qty++;
-               saveCart(cart);
-               renderCart();
-            }
-         });
+         btn.addEventListener('click', handlePlusClick);
       });
 
       document.querySelectorAll('.cart-table__delete').forEach(btn => {
-         btn.addEventListener('click', (e) => {
-            const row = e.target.closest('tr');
-            const id = row.dataset.id;
-            const color = row.dataset.color;
-            const size = row.dataset.size;
-            
-            const cart = getCart();
-            const filtered = cart.filter(item => 
-               !(item.id === id && 
-                 (item.color || '') === color && 
-                 (item.size || '') === size)
-            );
-            saveCart(filtered);
-            renderCart();
-         });
+         btn.addEventListener('click', handleDeleteClick);
       });
    }
 

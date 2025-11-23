@@ -195,11 +195,24 @@ textarea {
     width: fit-content;
   }
 }
+.header__button {
+  display: none;
+}
 @media (max-width: 425px) {
   .header__button {
     grid-column: 3;
     justify-self: end;
     width: fit-content;
+  }
+}
+@media (max-width: 1023px) {
+  .header__button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: clamp(0.5rem, 0.5rem + 0.7vw, 0.9375rem);
+    transform: translateY(-50%);
+    z-index: 1001;
   }
 }
 @media (max-width: 425px) {
@@ -267,19 +280,6 @@ textarea {
 @media (min-width: 1024px) {
   .header__actions {
     display: none;
-  }
-}
-.header__button {
-  display: none;
-}
-@media (max-width: 1023px) {
-  .header__button {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: clamp(0.5rem, 0.5rem + 0.7vw, 0.9375rem);
-    transform: translateY(-50%);
-    z-index: 1001;
   }
 }
 .header__menu-icon {
@@ -4190,3 +4190,5 @@ h2 {
 .selected .selected__images .product-card__actions .btn--primary.js-add {
   display: inline-block;
 }
+
+/*# sourceMappingURL=main.css.map */

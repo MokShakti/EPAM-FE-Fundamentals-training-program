@@ -111,7 +111,7 @@
                   <ul id="prodThumbs" class="product__thumbs"></ul>
                </section>
                <section class="product__info">
-                  <h1 id="prodTitle" class="product__title"></h1>
+                  <h1 id="prodTitle" class="product__title">Product</h1>
                   <div class="product__rating">
                      <span id="prodStars" aria-label="rating"></span>
                      <span id="prodReviews" class="product__reviews"></span>
@@ -155,14 +155,14 @@
                </section>
             </div>
             <section class="tabs">
-               <nav class="tabs__nav" role="tablist">
-                  <button class="tabs__btn is-active" data-tab="details" role="tab">DETAILS</button>
-                  <button class="tabs__btn" data-tab="reviews" role="tab">REVIEWS</button>
-                  <button class="tabs__btn" data-tab="shipping" role="tab">SHIPPING POLICY</button>
+               <nav class="tabs__nav" role="tablist" aria-label="Product information tabs">
+                  <button class="tabs__btn is-active" data-tab="details" role="tab" aria-label="Product details">DETAILS</button>
+                  <button class="tabs__btn" data-tab="reviews" role="tab" aria-label="Product reviews">REVIEWS</button>
+                  <button class="tabs__btn" data-tab="shipping" role="tab" aria-label="Shipping policy">SHIPPING POLICY</button>
                </nav>
                <div class="tabs__panes">
-                  <div id="tab-details" class="tabs__pane is-active"></div>
-                  <div id="tab-reviews" class="tabs__pane">
+                  <div id="tab-details" class="tabs__pane is-active" role="tabpanel" aria-labelledby="tab-details"></div>
+                  <div id="tab-reviews" class="tabs__pane" role="tabpanel" aria-labelledby="tab-reviews">
                      <div class="reviews">
                         <div class="reviews__content">
                            <div class="reviews__left">
@@ -190,22 +190,22 @@
                                  <fieldset class="review-form__rating">
                                     <legend>RATE PRODUCT</legend>
                                     <div class="stars" id="revStars" aria-label="Set rating" role="radiogroup">
-                                       <button type="button" class="stars__item" data-rate="1" aria-checked="false">★</button>
-                                       <button type="button" class="stars__item" data-rate="2" aria-checked="false">★</button>
-                                       <button type="button" class="stars__item" data-rate="3" aria-checked="false">★</button>
-                                       <button type="button" class="stars__item" data-rate="4" aria-checked="false">★</button>
-                                       <button type="button" class="stars__item" data-rate="5" aria-checked="false">★</button>
+                                       <button type="button" class="stars__item" data-rate="1" aria-label="1 star">★</button>
+                                       <button type="button" class="stars__item" data-rate="2" aria-label="2 stars">★</button>
+                                       <button type="button" class="stars__item" data-rate="3" aria-label="3 stars">★</button>
+                                       <button type="button" class="stars__item" data-rate="4" aria-label="4 stars">★</button>
+                                       <button type="button" class="stars__item" data-rate="5" aria-label="5 stars">★</button>
                                     </div>
                                     <input type="hidden" id="revRating" required>
                                  </fieldset>
-                                 <label class="review-form__field">
+                                 <label class="review-form__field" for="revText">
                                     <textarea id="revText" placeholder="Your Review*" required></textarea>
                                  </label>
                                  <div class="review-form__row">
-                                    <label class="review-form__field">
+                                    <label class="review-form__field" for="revName">
                                        <input id="revName" placeholder="Your Name*" required>
                                     </label>
-                                    <label class="review-form__field">
+                                    <label class="review-form__field" for="revEmail">
                                        <input id="revEmail" type="email" placeholder="Your Email*" required>
                                     </label>
                                  </div>
@@ -220,7 +220,7 @@
                         </div>
                      </div>
                   </div>
-                  <div id="tab-shipping" class="tabs__pane">
+                  <div id="tab-shipping" class="tabs__pane" role="tabpanel" aria-labelledby="tab-shipping">
                      <p>Standard: 3–5 business days. Express: 1–2 business days. Free returns within 30 days.</p>
                   </div>
                </div>
@@ -296,7 +296,7 @@
          </div>
       </footer>
    </div>
-   <div class="account-modal" role="dialog" aria-modal="true" style="display:none">
+   <dialog class="account-modal" aria-modal="true" style="display:none">
       <div class="account-modal__box">
          <button id="closeModal" class="account-modal__close" aria-label="Close">×</button>
          <form id="loginForm" class="account-modal__form" novalidate>
@@ -320,7 +320,7 @@
             <p id="loginMsg" class="account-modal__msg"></p>
          </form>
       </div>
-   </div>
+   </dialog>
    <script src="../js/main.js"></script>
    <script src="../js/product.js"></script>
 </body>

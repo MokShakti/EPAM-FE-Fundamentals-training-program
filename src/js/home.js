@@ -12,8 +12,8 @@ const loadProducts = () =>
 const resolveImage = (p) => {
    const raw = p?.imageUrl || (Array.isArray(p?.images) ? p.images[0] : '');
    if (!raw) return `${BASE}img/webp/selectedproducts/selected-1.webp`;
-   if (/^\.\//.test(raw)) return raw.replace(/^\.\//, BASE);
-   if (/^\.\.\//.test(raw)) return raw.replace(/^\.\.\//, BASE);
+   if (raw.startsWith('./')) return raw.replace(/^\.\//, BASE);
+   if (raw.startsWith('../')) return raw.replace(/^\.\.\//, BASE);
    return `${BASE}${raw.replace(/^\/+/, '')}`;
 };
 const getName = (p) => p?.name ?? 'Product';
@@ -109,7 +109,7 @@ const pickNew = (all) => {
       const isSecondOrFourth = index === 1 || index === 3;
       return {
          ...item,
-         salesStatus: isSecondOrFourth ? true : false
+         salesStatus: isSecondOrFourth
       };
    });
 };

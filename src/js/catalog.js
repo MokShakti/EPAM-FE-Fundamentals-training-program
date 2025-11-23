@@ -4,8 +4,8 @@ const BASE = location.pathname.includes('/html/') ? '../' : './';
 
 const resolveImage = (img) => {
    if (!img) return `${BASE}img/webp/selectedproducts/selected-1.webp`;
-   if (/^\.\//.test(img)) return img.replace(/^\.\//, BASE);
-   if (/^\.\.\//.test(img)) return img.replace(/^\.\.\//, BASE);
+   if (img.startsWith('./')) return img.replace(/^\.\//, BASE);
+   if (img.startsWith('../')) return img.replace(/^\.\.\//, BASE);
    return `${BASE}${img.replace(/^\/+/, '')}`;
 };
 
@@ -308,25 +308,37 @@ function recomputeView() {
    renderList(view.items, view.page);
 }
 
+function normalizeSize(size) {
+   if (size == null) return [];
+   return Array.isArray(size) ? size : [size];
+}
+
+function normalizeColor(color) {
+   if (color == null) return [];
+   return Array.isArray(color) ? color : [color];
+}
+
+function normalizeCategory(category) {
+   if (category == null) return [];
+   return Array.isArray(category) ? category : [category];
+}
+
 function initFilters(products) {
-   const sizes = products.map(p => {
-      const size = p.size;
-      return size != null ? (Array.isArray(size) ? size : [size]) : [];
-   }).flat().filter(v => v != null && v !== '');
+   const sizes = products.map(p => normalizeSize(p.size))
+      .flat()
+      .filter(v => v != null && v !== '');
    
-   const colors = products.map(p => {
-      const color = p.color;
-      return color != null ? (Array.isArray(color) ? color : [color]) : [];
-   }).flat().filter(v => v != null && v !== '');
+   const colors = products.map(p => normalizeColor(p.color))
+      .flat()
+      .filter(v => v != null && v !== '');
    
-   const categories = products.map(p => {
-      const category = p.category;
-      return category != null ? (Array.isArray(category) ? category : [category]) : [];
-   }).flat().filter(v => v != null && v !== '')
-     .filter(cat => {
-        const catLower = cat.toLowerCase();
-        return catLower !== 'luggage sets' && catLower !== 'travel-suitcases';
-     });
+   const categories = products.map(p => normalizeCategory(p.category))
+      .flat()
+      .filter(v => v != null && v !== '')
+      .filter(cat => {
+         const catLower = cat.toLowerCase();
+         return catLower !== 'luggage sets' && catLower !== 'travel-suitcases';
+      });
    
    fillFilterSelect(filterSize, sizes);
    fillFilterSelect(filterColor, colors);

@@ -5,8 +5,8 @@ const BASE = location.pathname.includes('/html/') ? '../' : './';
 
 const resolveImage = (img) => {
    if (!img) return `${BASE}img/webp/selectedproducts/selected-1.webp`;
-   if (/^\.\//.test(img)) return img.replace(/^\.\//, BASE);
-   if (/^\.\.\//.test(img)) return img.replace(/^\.\.\//, BASE);
+   if (img.startsWith('./')) return img.replace(/^\.\//, BASE);
+   if (img.startsWith('../')) return img.replace(/^\.\.\//, BASE);
    return `${BASE}${img.replace(/^\/+/, '')}`;
 };
 
@@ -191,7 +191,6 @@ tabBtns.forEach(btn => {
       starsWrap?.querySelectorAll('.stars__item').forEach((btn) => {
          const on = Number(btn.dataset.rate) <= n;
          btn.classList.toggle('is-on', on);
-         btn.setAttribute('aria-checked', on ? 'true' : 'false');
       });
    };
 

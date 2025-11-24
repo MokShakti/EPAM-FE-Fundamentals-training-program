@@ -243,7 +243,21 @@ function applyFilters(base, filters) {
       const filterColor = String(filters.color).trim().toLowerCase();
       result = result.filter(p => {
          const productColors = normalizeColor(p.color);
-         return productColors.some(c => String(c).trim().toLowerCase() === filterColor);
+         const matchesColor = productColors.some(c => String(c).trim().toLowerCase() === filterColor);
+
+         // Special case: if filtering by beige, only show products with selected-2.webp image
+         if (filterColor === 'beige') {
+            const imageUrl = p.imageUrl || '';
+            return matchesColor && imageUrl.includes('selected-2.webp');
+         }
+
+         // Special case: if filtering by brown, only show products with case-8.webp image
+         if (filterColor === 'brown') {
+            const imageUrl = p.imageUrl || '';
+            return matchesColor && imageUrl.includes('case-8.webp');
+         }
+
+         return matchesColor;
       });
    }
 
@@ -252,7 +266,27 @@ function applyFilters(base, filters) {
       result = result.filter(p => {
          if (!p.category) return false;
          const productCategory = String(p.category).trim().toLowerCase();
-         return productCategory === filterCategory;
+         const matchesCategory = productCategory === filterCategory;
+
+         // Special case: if filtering by carry-ons, only show products with specific images
+         if (filterCategory === 'carry-ons') {
+            const imageUrl = p.imageUrl || '';
+            const allowedImages = [
+               'case-5.webp',
+               'case-6.webp',
+               'case-7.webp',
+               'case-9.webp',
+               'case-10.webp',
+               'case-11.webp',
+               'case-12.webp',
+               'new-1.webp',
+               'new-4.webp',
+               'selected-1.webp'
+            ];
+            return matchesCategory && allowedImages.some(img => imageUrl.includes(img));
+         }
+
+         return matchesCategory;
       });
    }
 
